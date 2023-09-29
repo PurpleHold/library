@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
+    <div class="global-container">
+        <div class="header">
+            <h1>MyLibrary</h1>
+        </div>
+        <div class="form-container">
+            <form id="book-form" action="" method="post">
+                <label for="title">Book title</label>
+                <input type="text" id="title" name="title">
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author">
+                <label for="pagesNb">Number of pages</label>
+                <input type="text" id="pagesNb" name="pagesNb">
+                <fieldset>
+                    <legend>Already read it?</legend>
+                    <label for="read-yes">Yes</label>
+                    <input type="radio" id="read-yes" name="readStatus" value="yes">
+                    <label for="read-no">No</label>
+                    <input type="radio" id="read-no" name="readStatus" value="no">
+                </fieldset>
+                <button id="btn-submit" type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="book-display">
+        </div>
+    </div>
 </body>
 </html>

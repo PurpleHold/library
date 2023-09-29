@@ -1,0 +1,111 @@
+body {
+    background: linear-gradient(161deg, rgb(63 214 154) 0%, #3700a3 100%);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.global-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+    "header header"
+    "form books";
+    gap: 2rem;
+    padding: 5rem 3rem 1rem 5rem;
+}
+
+
+.header {
+    grid-area: header;
+}
+.header h1 {
+    font-size: 5rem;
+    padding: 0;
+    margin: 0;
+    color: #3700a3;
+}
+
+
+.form-container {
+    grid-area: form;
+}
+form#book-form {
+    display: grid;
+    gap: 1rem;
+    padding: 3.5rem 2rem;
+    background: #fff;
+    border-radius: 15px;
+    min-width: 250px;
+    max-width: 350px;
+}
+#book-form label:not(fieldset label), legend {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+#book-form input[type="text"] {
+    border-radius: 33px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #333;
+    font-size: 1rem;
+}
+button#btn-submit {
+    background-color: #fff;
+    color: #3700a3;
+    border: 2px solid #3700a3;
+    padding: 0.5rem 0.75rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+button#btn-submit:hover {
+    color: #fff;
+    background-color: #3700a3;
+}
+
+
+.book-display {
+    grid-area: books;
+    display: grid;
+    gap: 1rem;
+    justify-content: start;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 500px));
+}
+.card {
+    background: #c7ebff;
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    max-height: 250px;
+    flex-direction: column;
+}
+.card .title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+.author {
+    font-size: 1.5rem;
+    font-style: italic;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+.pages::before, .status::before {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-right: 1rem;
+    letter-spacing: 1px;
+}
+.pages::before {
+    content: "Pages: ";
+}
+.status::before {
+    content: "Already read?";
+}
+.status, .pages {
+    font-size: 1.15rem;
+    text-transform: capitalize;
+}
