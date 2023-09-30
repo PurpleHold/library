@@ -25,15 +25,26 @@ form.addEventListener("submit", (e) => {
     else {
         i = i+1;
     }
-
-    cardsContainer.insertAdjacentHTML ("beforeend", 
-    `<div class="card" data-index-number="${i}">
-    <span class="title">${library[i].title}</span>
-    <span class="author">${library[i].author}</span>
-    <span class="pages">${library[i].pagesNb}</span>
-    <span class="status">${library[i].readStatus}</span>
-    <div class="btn-container"><button type="button" class="change-status">Change status</button>
-    <button type="button" class="remove">Remove Book</button></div></div>`);
+    console.log(library[i].readStatus);
+    if (library[i].readStatus == "yes") {
+        cardsContainer.insertAdjacentHTML ("beforeend", 
+        `<div class="card" data-index-number="${i}">
+        <span class="title">${library[i].title}</span>
+        <span class="author">${library[i].author}</span>
+        <span class="pages">${library[i].pagesNb}</span>
+        <span class="status">${library[i].readStatus}</span>
+        <div class="btn-container"><button type="button" class="change-status">Change status</button>
+        <button type="button" class="remove">Remove Book</button></div></div>`)
+    } else {
+        cardsContainer.insertAdjacentHTML ("beforeend", 
+        `<div class="card unread" data-index-number="${i}">
+        <span class="title">${library[i].title}</span>
+        <span class="author">${library[i].author}</span>
+        <span class="pages">${library[i].pagesNb}</span>
+        <span class="status">${library[i].readStatus}</span>
+        <div class="btn-container"><button type="button" class="change-status">Change status</button>
+        <button type="button" class="remove">Remove Book</button></div></div>`)
+    }   
 });
 
 cardsContainer.addEventListener('click', function (e) { 
@@ -49,8 +60,10 @@ cardsContainer.addEventListener('click', function (e) {
 
         if (selectedStatus.innerText == "Yes") {
             selectedStatus.innerText = "No";
+            selectedCard.classList.add("unread");
         } else if (selectedStatus.innerText == "No") {
             selectedStatus.innerText = "Yes";
+            selectedCard.classList.remove("unread");
         }
       };
 });

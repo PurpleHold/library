@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+
 body {
-    background: linear-gradient(161deg, rgb(63 214 154) 0%, #3700a3 100%);
+    background-color: #f5e9ff;
     min-height: 100vh;
     padding: 0;
     margin: 0;
@@ -18,12 +20,23 @@ body {
 
 .header {
     grid-area: header;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: baseline;
+    gap: 1rem;
 }
 .header h1 {
+    font-family: 'DM Serif Display', serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial;
     font-size: 5rem;
+    font-weight: normal;
     padding: 0;
     margin: 0;
-    color: #3700a3;
+    color: #3639e6;
+}
+iconify-icon {
+    font-size: 5rem;
+    color: #3639e6;
 }
 
 
@@ -34,25 +47,29 @@ form#book-form {
     display: grid;
     gap: 1rem;
     padding: 3.5rem 2rem;
-    background: #fff;
+    background: #5457ff;
     border-radius: 15px;
     min-width: 250px;
     max-width: 350px;
+    color: #fff;
 }
 #book-form label:not(fieldset label), legend {
     font-size: 1.25rem;
     font-weight: 600;
+    letter-spacing: 1px;
 }
 #book-form input[type="text"] {
-    border-radius: 33px;
+    border-radius: 15px;
     padding: 0.5rem 0.75rem;
     border: 1px solid #333;
     font-size: 1rem;
 }
-button#btn-submit, .btn-container button {
-    background-color: inherit;
-    color: #3700a3;
-    border: 2px solid #3700a3;
+#book-form fieldset {
+    border-color: #fff;
+}
+
+
+.btn-container button, button#btn-submit {
     padding: 0.5rem 0.75rem;
     border-radius: 15px;
     font-size: 1rem;
@@ -60,9 +77,23 @@ button#btn-submit, .btn-container button {
     margin-top: 1.5rem;
     cursor: pointer;
 }
-button#btn-submit:hover, .btn-container button:hover {
+button#btn-submit {
+    background-color: inherit;
     color: #fff;
-    background-color: #3700a3;
+    border: 2px solid #fff;
+}
+button#btn-submit:hover {
+    color: #3639e6;
+    background-color: #fff;
+}
+.btn-container button {
+    background-color: inherit;
+    color: #3639e6;
+    border: 2px solid #3639e6;
+}
+.btn-container button:hover  {
+    color: #fff;
+    background-color: #3639e6;
 }
 
 
@@ -74,17 +105,25 @@ button#btn-submit:hover, .btn-container button:hover {
     grid-template-columns: repeat(auto-fit, minmax(350px, 500px));
 }
 .card {
-    background: #c7ebff;
+    background: #6fe4b8;
     border-radius: 15px;
     padding: 2rem;
     display: flex;
-    max-height: 250px;
     flex-direction: column;
+    border: 2px solid #6fe4b8;
+    max-height: 275px;
+}
+.card.unread {
+    background: inherit;
+    border-radius: 15px;
+    border: 2px solid #3639e6;
 }
 .card .title {
-    font-size: 2.5rem;
-    font-weight: 900;
-    letter-spacing: 2px;
+	font-size: 2.25rem;
+	font-weight: 900;
+	letter-spacing: 2px;
+	font-family: 'DM Serif Display', serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial;
+	line-height: 2.5rem;
 }
 .author {
     font-size: 1.5rem;
