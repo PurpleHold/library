@@ -1,24 +1,13 @@
-// array to store book objects
 const library = [];
-// html container for stored books
 const cardsContainer = document.querySelector('.book-display');
+const form = document.getElementById('book-form');
 
-/*const newCard = `<div class="card"><span class="title">${library[i].title}</span>
-<span class="author">${book.author}</span>
-<span class="pages">${book.pagesNb}</span>
-<span class="status">${book.readStatus}</span></div>`;*/
-
-// book object constructor
 function Book(title, author, pagesNb, readStatus) {
     this.title = title
     this.author = author
     this.pagesNb = pagesNb
     this.readStatus = readStatus
 };
-
-// function that will take user input and store new books 
-// in the array
-const form = document.getElementById('book-form');
 
 let i = 0;
 
@@ -56,10 +45,8 @@ cardsContainer.addEventListener('click', function (e) {
 cardsContainer.addEventListener('click', function (e) { 
     if (e.target.classList.contains('change-status')) {
         let selectedCard = e.target.parentElement.parentElement;
-        console.log(selectedCard);
         let selectedStatus = selectedCard.querySelector('.status');
-        console.log(selectedStatus);
-        console.log(selectedStatus.innerText);
+
         if (selectedStatus.innerText == "Yes") {
             selectedStatus.innerText = "No";
         } else if (selectedStatus.innerText == "No") {
