@@ -49,8 +49,8 @@ form#book-form {
     border: 1px solid #333;
     font-size: 1rem;
 }
-button#btn-submit {
-    background-color: #fff;
+button#btn-submit, .btn-container button {
+    background-color: inherit;
     color: #3700a3;
     border: 2px solid #3700a3;
     padding: 0.5rem 0.75rem;
@@ -60,7 +60,7 @@ button#btn-submit {
     margin-top: 1.5rem;
     cursor: pointer;
 }
-button#btn-submit:hover {
+button#btn-submit:hover, .btn-container button:hover {
     color: #fff;
     background-color: #3700a3;
 }
