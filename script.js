@@ -52,20 +52,19 @@ cardsContainer.addEventListener('click', function (e) {
         e.target.parentElement.parentElement.remove();
       };
 });
-/*
+
 cardsContainer.addEventListener('click', function (e) { 
     if (e.target.classList.contains('change-status')) {
-        const currentCard = e.target.parentElement.parentElement;
-        let status = currentCard.lastChild.previousSibling.previousSibling.innerText;
-        console.log(status);
-
-        if (status == 'Yes') {
-            status = 'No';
-        }
-        else {
-            status = 'Yes';
+        let selectedCard = e.target.parentElement.parentElement;
+        console.log(selectedCard);
+        let selectedStatus = selectedCard.querySelector('.status');
+        console.log(selectedStatus);
+        console.log(selectedStatus.innerText);
+        if (selectedStatus.innerText == "Yes") {
+            selectedStatus.innerText = "No";
+        } else if (selectedStatus.innerText == "No") {
+            selectedStatus.innerText = "Yes";
         }
       };
 });
-*/
 
